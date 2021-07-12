@@ -71,7 +71,7 @@ To contribute code we recommend you follow these steps:
 
 8. Run the doctests regularly when you make edits.
 
-   To run the doctests `<pytest https://docs.pytest.org/en/latest/>`_ is needed and can be installed with ``pip install -U pytest``.
+   To run the doctests, `pytest <https://docs.pytest.org/en/latest/>`_ is needed and can be installed with ``pip install -U pytest``.
 
    To run the tests from the shell you can `cd` to the project's root directory and type::
 

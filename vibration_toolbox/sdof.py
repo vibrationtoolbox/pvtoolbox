@@ -189,7 +189,7 @@ def time_plot(m=10, c=1, k=100, x0=1, v0=-1, max_time=100):
                 r'$\lambda_2$ = %0.2f' %
                 (zeta * omega + omega * (zeta ** 2 - 1)))
     ax.legend()
-    # plt.show()
+    plt.show()
 
 
 def time_plot_i(max_time=(1.0, 100.0), x0=(-100, 100), v0=(-100, 100),
@@ -563,7 +563,7 @@ def steady_state_response(zs=0.1, rmin=0.0, rmax=2.0):
     """
     if not isinstance(zs, list):
         zs = [zs]
-    r = np.linspace(rmin, rmax, 100 * (rmax - rmin))
+    r = np.linspace(rmin, rmax, int(100 * (rmax - rmin)))
     A0 = np.zeros((len(zs), len(r)), complex)
     for z in enumerate(zs):
         A0[z[0]] = (1 / (1 - r**2 + 2 * 1j * r * z[1]))
@@ -655,7 +655,7 @@ def transmissibility(zs=np.array([0.05, 0.1, 0.25, 0.5, -0.75]),
     """
     if not isinstance(zs, list):
         zs = [zs]
-    r = np.linspace(rmin, rmax, 300 * (rmax - rmin))
+    r = np.linspace(rmin, rmax, int(300 * (rmax - rmin)))
     DT = np.zeros((len(zs), len(r)))
     for z in enumerate(zs):
         # 2.71
@@ -759,7 +759,7 @@ def rotating_unbalance(m, m0, e, zs, rmin, rmax, normalized=True):
     """
     if not isinstance(zs, list):
         zs = [zs]
-    r = np.linspace(rmin, rmax, 100 * (rmax - rmin))
+    r = np.linspace(rmin, rmax, int(100 * (rmax - rmin)))
     Xn = np.zeros((len(zs), len(r)), complex)
     for z in enumerate(zs):
         Xn[z[0]] = (r / (1 - r**2 + 2 * 1j * r * z[1]))
@@ -786,7 +786,7 @@ def rotating_unbalance(m, m0, e, zs, rmin, rmax, normalized=True):
         ax2.plot(r, -np.angle(X_z) / np.pi * 180)
 
     ax1.legend(([r'$\zeta$ = ' + (str(s)) for s in zs]))
-
+    plt.show()
     return r, Xn
 
 

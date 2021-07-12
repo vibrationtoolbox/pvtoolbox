@@ -124,7 +124,7 @@ def plot_fft(t, time_response, ax=None, **kwargs):
     >>> t = np.linspace(0, 10, 1000)
     >>> time_response = 2 * np.sin(40*t)
     >>> vtb.plot_fft(t, time_response)
-    <matplotlib.axes...
+    <AxesSubplot:title=...
 
     """
     if ax is None:
